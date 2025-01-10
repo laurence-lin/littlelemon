@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,9 +76,17 @@ WSGI_APPLICATION = 'capstone.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'old_sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'reservations_capstone', # DB name in MySQL
+        'HOST' : '192.168.88.47',
+        'PORT' : '3306',
+        'USER' : 'admin',
+        'PASSWORD' : 'laurence',
     }
 }
 
@@ -121,6 +130,9 @@ STATIC_URL = 'restaurant/static/'
 STATICFILES_DIRS = [
     'restaurant/static',
 ]
+
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Usually outside your project code, for production
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
