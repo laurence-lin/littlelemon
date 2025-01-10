@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'restaurant',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'reservations_capstone', # DB name in MySQL
-        'HOST' : '192.168.88.47',
+        'HOST' : '192.168.1.104',
         'PORT' : '3306',
         'USER' : 'admin',
         'PASSWORD' : 'laurence',
