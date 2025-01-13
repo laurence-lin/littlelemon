@@ -87,10 +87,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'reservations_capstone', # DB name in MySQL
-        'HOST' : '192.168.1.104',
+        'HOST' : '127.0.0.1',
         'PORT' : '3306',
-        'USER' : 'admin',
-        'PASSWORD' : 'laurence',
+        'USER' : 'root',
+        'PASSWORD' : 'password',
     }
 }
 
